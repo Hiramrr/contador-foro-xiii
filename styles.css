@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light;
+  --fondo: #ffffff;
+  --fondo-exterior: #ffffff;
+  --azul: #083b80;
+  --verde: #087b3d;
+  --acento: #00ad4d;
+  --texto: #1d2d41;
+  --tenue: #536479;
+  --borde: #9cb2cd;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", monospace;
+  color: var(--texto);
+  background: var(--fondo-exterior);
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; padding: 28px 24px; font-size: 14px; line-height: 1.5; }
+.terminal { max-width: 960px; margin: 0 auto; border: 1px solid var(--borde); background: var(--fondo); }
+.presentacion { display: grid; grid-template-columns: 1.05fr 1fr; gap: 0; padding: 30px 22px 24px; }
+.panel { position: relative; min-width: 0; border: 1px solid var(--borde); }
+.rotulo { position: absolute; top: 0; left: 14px; margin: 0; padding: 0 8px; color: var(--azul); background: var(--fondo); font-size: 12px; font-weight: 400; line-height: 1; transform: translateY(-50%); }
+.evento { padding: 26px 22px 22px; }
+.ascii { width: fit-content; max-width: 100%; margin: 0 0 20px; color: var(--acento); font-family: inherit; font-size: clamp(13px, 1.8vw, 18px); font-weight: 400; line-height: 1.05; white-space: pre; }
+h1 { margin: 0; color: var(--azul); font-size: 24px; font-weight: 700; line-height: 1.2; }
+.subtitulo { display: block; margin-bottom: 8px; color: var(--azul); font-size: 12px; font-weight: 400; line-height: 1.6; }
+.datos { display: grid; gap: 10px; margin: 24px 0 0; padding-top: 18px; border-top: 1px dashed var(--borde); font-size: 12px; }
+.datos > div { display: grid; grid-template-columns: 8ch minmax(0, 1fr); gap: 10px; }
+.datos dt { color: var(--tenue); white-space: nowrap; }
+.datos dt::before { color: var(--verde); content: "> "; }
+.datos dd { margin: 0; overflow-wrap: break-word; }
+.localidad { display: block; margin-top: 2px; color: var(--azul); }
+.tenue { color: var(--tenue); }
+.campus { display: flex; align-items: center; min-width: 0; margin: 0; }
+.campus > img { display: block; width: 100%; height: auto; clip-path: inset(0 0 5% 0); }
+.contador { margin: 0 22px 24px; padding: 23px 24px 24px; }
+.contador > .rotulo { color: var(--verde); }
+.nota { margin: 0; color: var(--tenue); font-size: 12px; line-height: 1.6; }
+.nota::before { margin-right: 8px; color: var(--verde); content: ">"; }
+.cuenta { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: start; gap: 10px; max-width: 700px; margin: 16px auto 0; }
+.unidad { min-width: 0; text-align: center; }
+.numero { display: block; color: var(--azul); font-size: 64px; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.nombre { display: block; margin-top: 5px; color: var(--tenue); font-size: 11px; }
+.separador { padding-top: 8px; color: var(--borde); font-size: 40px; line-height: 1.1; }
+.contador[data-estado="durante"] .nota, .contador[data-estado="despues"] .nota { padding: 10px 0; color: var(--texto); font-size: 15px; }
+.sin-javascript { margin: 0; padding: 0 22px 24px; color: var(--tenue); }
+.solo-lectores { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.incrustado { background: transparent; }
+.incrustado body { padding: 0; }
+
+@media (max-width: 700px) {
+  body { padding: 20px 16px; }
+  .presentacion { padding: 26px 16px 20px; grid-template-columns: 1.3fr 1fr; }
+  .evento { padding: 23px 16px 20px; }
+  .ascii { font-size: 14px; }
+  h1 { font-size: 21px; }
+  .datos { font-size: 11px; }
+  .contador { margin: 0 16px 20px; padding: 20px 16px; }
+  .numero { font-size: 52px; }
+}
+
+@media (max-width: 520px) {
+  body { padding: 16px; }
+  .presentacion { grid-template-columns: 1fr; gap: 24px; padding: 25px 14px 22px; }
+  .evento { padding: 23px 16px 20px; }
+  .ascii { font-size: 14px; }
+  h1 { font-size: 22px; }
+  .datos { grid-template-columns: 1fr; font-size: 11px; }
+  .contador { margin: 0 14px 20px; padding: 20px 10px; }
+  .nota { font-size: 11px; }
+  .cuenta { gap: 2px; margin-top: 17px; }
+  .numero { font-size: clamp(30px, 10vw, 45px); }
+  .nombre { font-size: 9px; }
+  .separador { padding-top: 5px; font-size: 26px; }
+}

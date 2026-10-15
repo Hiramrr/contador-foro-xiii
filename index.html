@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cuenta regresiva para el XIII Foro de Divulgación Científica en Ciencias de la Computación. 12 y 13 de noviembre de 2026, Xalapa, Veracruz.">
+  <meta name="theme-color" content="#ffffff">
+  <title>XIII Foro · Ciencias de la Computación · UV</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="terminal" aria-labelledby="titulo-foro">
+    <div class="presentacion">
+      <section class="evento panel" aria-labelledby="titulo-foro">
+        <span class="rotulo" aria-hidden="true">[ evento ]</span>
+        <pre class="ascii" aria-hidden="true">██╗  ██╗██╗██╗██╗
+╚██╗██╔╝██║██║██║
+ ╚███╔╝ ██║██║██║
+ ██╔██╗ ██║██║██║
+██╔╝ ██╗██║██║██║
+╚═╝  ╚═╝╚═╝╚═╝╚═╝</pre>
+        <h1 id="titulo-foro"><span class="solo-lectores">XIII </span><span class="subtitulo">Foro de divulgación científica en</span>Ciencias de<br>la Computación</h1>
+        <dl class="datos">
+          <div><dt>fecha</dt><dd><time datetime="2026-11-12">12</time> y <time datetime="2026-11-13">13</time> de noviembre, 2026</dd></div>
+          <div><dt>inicio</dt><dd><time datetime="2026-11-12T09:00:00-06:00">12 nov · 09:00 h</time> <span class="tenue">UTC−6</span></dd></div>
+          <div><dt>sede</dt><dd>Facultad de Estadística e Informática<span class="localidad">Xalapa, Veracruz</span></dd></div>
+        </dl>
+      </section>
+
+      <figure class="campus">
+        <img src="assets/campus.webp" alt="Facultad de Estadística e Informática en azul, con círculos azules y cuadros verdes y azules sobre fondo blanco" width="1440" height="892">
+      </figure>
+    </div>
+
+    <section class="contador panel" aria-labelledby="estado">
+      <h2 class="rotulo" id="estado" role="status">[ cuenta regresiva ]</h2>
+      <p class="nota" id="nota">Inauguración · 12 de noviembre · 09:00 h · Veracruz</p>
+      <div class="cuenta" id="cuenta" role="timer" aria-label="Tiempo restante hasta el 12 de noviembre a las 09:00 h" hidden>
+        <div class="unidad"><span class="numero" id="dias">00</span><span class="nombre" id="nombre-dias">días</span></div>
+        <span class="separador" aria-hidden="true">:</span>
+        <div class="unidad"><span class="numero" id="horas">00</span><span class="nombre">horas</span></div>
+        <span class="separador" aria-hidden="true">:</span>
+        <div class="unidad"><span class="numero" id="minutos">00</span><span class="nombre">minutos</span></div>
+        <span class="separador" aria-hidden="true">:</span>
+        <div class="unidad"><span class="numero" id="segundos">00</span><span class="nombre">segundos</span></div>
+      </div>
+    </section>
+    <noscript><p class="sin-javascript">&gt; Activa JavaScript para ver la cuenta regresiva.</p></noscript>
+  </main>
+</body>
+</html>

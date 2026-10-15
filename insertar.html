@@ -1,0 +1,20 @@
+<iframe
+  id="contador-xiii-foro"
+  src="https://hiramrr.github.io/contador-foro-xiii/"
+  title="Cuenta regresiva del XIII Foro de Divulgación Científica en Ciencias de la Computación"
+  width="100%"
+  height="1000"
+  style="display:block; width:100%; border:0;">
+</iframe>
+<script>
+  window.addEventListener("message", function (e) {
+    var marco = document.getElementById("contador-xiii-foro");
+    if (!marco || e.source !== marco.contentWindow) return;
+    if (e.origin !== new URL(marco.src).origin) return;
+    if (!e.data || e.data.tipo !== "contador-xiii-foro-altura") return;
+    var alto = e.data.alto;
+    if (typeof alto === "number" && Number.isFinite(alto) && alto > 0 && alto < 10000) {
+      marco.style.height = Math.ceil(alto) + "px";
+    }
+  });
+</script>
