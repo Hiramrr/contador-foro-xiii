@@ -36,6 +36,7 @@ h1 { margin: 0; color: var(--azul); font-size: 24px; font-weight: 700; line-heig
 .campus > img { display: block; width: 100%; height: auto; clip-path: inset(0 0 5% 0); }
 .contador { margin: 0 22px 24px; padding: 23px 24px 24px; }
 .contador > .rotulo { color: var(--verde); }
+.aviso { margin: 0 0 10px; color: var(--verde); font-size: clamp(22px, 4vw, 30px); font-weight: 700; line-height: 1.25; }
 .nota { margin: 0; color: var(--tenue); font-size: 12px; line-height: 1.6; }
 .nota::before { margin-right: 8px; color: var(--verde); content: ">"; }
 .cuenta { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: start; gap: 10px; max-width: 700px; margin: 16px auto 0; }

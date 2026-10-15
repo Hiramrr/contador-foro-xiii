@@ -19,4 +19,24 @@ const sinHora = vm.createContext({});
 vm.runInContext(source.replace('const HORA_INICIO = "09:00";', "const HORA_INICIO = null;"), sinHora);
 assert.equal(sinHora.obtenerEstado(Date.parse("2026-11-11T23:59:59-06:00")).segundos, 1);
 assert.equal(sinHora.obtenerEstado(Date.parse("2026-11-12T00:00:00-06:00")).tipo, "durante");
-console.log("9 comprobaciones correctas: hora configurada, cuenta regresiva, zona horaria, inicio, dos días y cierre.");
+const html = fs.readFileSync(`${__dirname}/index.html`, "utf8");
+const elementos = Object.fromEntries([...html.matchAll(/\bid="([^"]+)"/g)].map(([, id]) => [id, {
+  hidden: false, textContent: "", setAttribute() {}
+}]));
+context.document = {
+  getElementById: (id) => elementos[id],
+  querySelector: () => ({ dataset: {} })
+};
+for (const [fecha, cuentaVisible, avisoVisible] of [
+  ["2026-11-12T08:59:59-06:00", true, false],
+  ["2026-11-12T09:00:00-06:00", false, true],
+  ["2026-11-13T23:59:59-06:00", false, true],
+  ["2026-11-14T00:00:00-06:00", false, false]
+]) {
+  vm.runInContext(`Date.now = () => ${Date.parse(fecha)}`, context);
+  context.actualizar();
+  assert.equal(elementos.cuenta.hidden, !cuentaVisible, `Cuenta regresiva en ${fecha}`);
+  assert.equal(elementos.aviso.hidden, !avisoVisible, `Aviso del foro en ${fecha}`);
+}
+assert.equal(elementos.estado.textContent, "[ foro concluido ]");
+console.log("Comprobaciones correctas: fechas, cuenta regresiva, aviso automático al iniciar, segundo día y cierre.");

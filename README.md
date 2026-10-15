@@ -32,7 +32,7 @@ Al guardar una hora, el contador y su nota usan ese horario. Actualiza también 
 
 Si cambias las fechas del evento, actualiza `FECHA_INICIO` y el límite exclusivo `FIN_MS` al principio de `script.js`. Cambia también las fechas escritas en sus notas y en el `aria-label`, los textos y elementos `time` de `index.html`, y las fechas esperadas en `check.cjs`.
 
-El contador usa instantes con el desplazamiento `-06:00`. Su resultado no depende de la zona horaria de quien lo visita. Durante los días del foro muestra un mensaje de celebración. Desde el 14 de noviembre muestra el cierre. No afirma que haya una transmisión en vivo.
+El contador usa instantes con el desplazamiento `-06:00`. Su resultado no depende de la zona horaria de quien lo visita. El 12 de noviembre a las 09:00 h oculta la cuenta y muestra en verde "¡El foro está en curso!", junto con la sede. El aviso permanece durante los dos días del evento. Desde el 14 de noviembre muestra el cierre. El cambio ocurre automáticamente, sin recargar la página.
 
 ## Archivos
 
@@ -42,7 +42,7 @@ El contador usa instantes con el desplazamiento `-06:00`. Su resultado no depend
 | `styles.css` | TUI blanca con azul y verde, escritorio y celular |
 | `script.js` | Hora editable, cuenta, estados y altura del iframe |
 | `assets/` | Composición de la facultad, círculos y cuadros en WebP |
-| `check.cjs` | Nueve comprobaciones de fechas y cambios de estado |
+| `check.cjs` | Comprobaciones de fechas y del aviso de inicio |
 | `insertar.html` | Iframe listo para pegar, con altura automática |
 
 El diseño usa fondo blanco, tipografía monoespaciada, un XIII en caracteres de bloque y marcos de terminal en azul. No tiene barra superior ni pie. La composición del campus conserva el edificio, los círculos azules y los cuadros azules y verdes, con margen alrededor de la torre. Un recorte del 5 % inferior deja horizontal la base de la imagen.
@@ -88,7 +88,7 @@ Con Node.js instalado, ejecuta lo siguiente.
 node check.cjs
 ```
 
-Comprueba la cuenta antes del inicio, el último milisegundo, los dos días del evento, el cierre y una hora de inicio configurada. El contador se actualiza con el reloj actual en cada segundo y al volver a la pestaña, sin acumular retrasos de intervalos.
+Comprueba la cuenta antes del inicio, el último milisegundo, los dos días del evento, el cierre y una hora de inicio configurada. También verifica que el aviso aparezca a las 09:00 h, sustituya la cuenta y se retire al concluir. El contador se actualiza con el reloj actual en cada segundo y al volver a la pestaña, sin acumular retrasos de intervalos.
 
 ## Accesibilidad
 

@@ -26,6 +26,7 @@ function actualizar() {
   const contador = document.querySelector(".contador");
   contador.dataset.estado = estado.tipo;
   document.getElementById("cuenta").hidden = estado.tipo !== "antes";
+  document.getElementById("aviso").hidden = estado.tipo !== "durante";
 
   let titulo;
   let nota;
@@ -39,8 +40,8 @@ function actualizar() {
     }
     document.getElementById("nombre-dias").textContent = estado.dias === 1 ? "día" : "días";
   } else if (estado.tipo === "durante") {
-    titulo = "[ días del foro ]";
-    nota = "El XIII Foro se celebra este 12 y 13 de noviembre en el Salón Cristal de la Facultad de Estadística e Informática.";
+    titulo = "[ foro en curso ]";
+    nota = "Te esperamos en el Salón Cristal de la Facultad de Estadística e Informática.";
   } else {
     titulo = "[ foro concluido ]";
     nota = "Gracias por ser parte del XIII Foro. Edición del 12 y 13 de noviembre de 2026.";
