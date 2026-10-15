@@ -1,6 +1,6 @@
 # Contador del XIII Foro
 
-Cuenta regresiva estilo TUI para el XIII Foro de Divulgación Científica en Ciencias de la Computación, el 12 y 13 de noviembre de 2026 en la Facultad de Estadística e Informática, Xalapa, Veracruz. La inauguración es el 12 de noviembre a las 09:00 h, hora de Veracruz.
+Cuenta regresiva estilo TUI para el XIII Foro de Divulgación Científica en Ciencias de la Computación, el 12 y 13 de noviembre de 2026 en el Salón Cristal de la Facultad de Estadística e Informática, Xalapa, Veracruz. La inauguración es el 12 de noviembre a las 09:00 h, hora de Veracruz.
 
 HTML, CSS y JavaScript sin dependencias. La página funciona al abrir `index.html` directamente y se publica en GitHub Pages para insertarla en WordPress con un iframe.
 
