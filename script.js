@@ -32,8 +32,8 @@ function actualizar() {
   if (estado.tipo === "antes") {
     titulo = "[ cuenta regresiva ]";
     nota = HORA_INICIO
-      ? `El foro comienza el 12 de noviembre a las ${HORA_INICIO} h, hora de Veracruz.`
-      : "Cuenta hasta el inicio del 12 de noviembre, 00:00 h en Veracruz. Hora de inauguración por confirmar.";
+      ? `El foro comienza el 12 de noviembre a las ${HORA_INICIO} h.`
+      : "Cuenta hasta el inicio del 12 de noviembre, 00:00 h. Hora de inauguración por confirmar.";
     for (const unidad of ["dias", "horas", "minutos", "segundos"]) {
       document.getElementById(unidad).textContent = String(estado[unidad]).padStart(2, "0");
     }
