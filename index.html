@@ -7,11 +7,26 @@
   <meta name="theme-color" content="#ffffff">
   <title>XIII Foro · Ciencias de la Computación · UV</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
   <script src="script.js?v=3" defer></script>
 </head>
 <body>
   <main class="terminal" aria-labelledby="titulo-foro">
+    <section class="contador panel" aria-labelledby="estado">
+      <h2 class="rotulo" id="estado" role="status">[ cuenta regresiva ]</h2>
+      <p class="aviso" id="aviso" hidden>¡El foro está en curso!</p>
+      <p class="nota" id="nota">Inauguración · 12 de noviembre · 09:00 h</p>
+      <div class="cuenta" id="cuenta" role="timer" aria-label="Tiempo restante hasta el 12 de noviembre a las 09:00 h" hidden>
+        <div class="unidad"><span class="numero" id="dias">00</span><span class="nombre" id="nombre-dias">días</span></div>
+        <span class="separador" aria-hidden="true">:</span>
+        <div class="unidad"><span class="numero" id="horas">00</span><span class="nombre">horas</span></div>
+        <span class="separador" aria-hidden="true">:</span>
+        <div class="unidad"><span class="numero" id="minutos">00</span><span class="nombre">minutos</span></div>
+        <span class="separador" aria-hidden="true">:</span>
+        <div class="unidad"><span class="numero" id="segundos">00</span><span class="nombre">segundos</span></div>
+      </div>
+    </section>
+
     <div class="presentacion">
       <section class="evento panel" aria-labelledby="titulo-foro">
         <span class="rotulo" aria-hidden="true">[ evento ]</span>
@@ -33,21 +48,6 @@
         <img src="assets/campus.webp" alt="Facultad de Estadística e Informática en azul, con círculos azules y cuadros verdes y azules sobre fondo blanco" width="1440" height="892">
       </figure>
     </div>
-
-    <section class="contador panel" aria-labelledby="estado">
-      <h2 class="rotulo" id="estado" role="status">[ cuenta regresiva ]</h2>
-      <p class="aviso" id="aviso" hidden>¡El foro está en curso!</p>
-      <p class="nota" id="nota">Inauguración · 12 de noviembre · 09:00 h</p>
-      <div class="cuenta" id="cuenta" role="timer" aria-label="Tiempo restante hasta el 12 de noviembre a las 09:00 h" hidden>
-        <div class="unidad"><span class="numero" id="dias">00</span><span class="nombre" id="nombre-dias">días</span></div>
-        <span class="separador" aria-hidden="true">:</span>
-        <div class="unidad"><span class="numero" id="horas">00</span><span class="nombre">horas</span></div>
-        <span class="separador" aria-hidden="true">:</span>
-        <div class="unidad"><span class="numero" id="minutos">00</span><span class="nombre">minutos</span></div>
-        <span class="separador" aria-hidden="true">:</span>
-        <div class="unidad"><span class="numero" id="segundos">00</span><span class="nombre">segundos</span></div>
-      </div>
-    </section>
     <noscript><p class="sin-javascript">&gt; Activa JavaScript para ver la cuenta regresiva.</p></noscript>
   </main>
 </body>
